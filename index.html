@@ -1,0 +1,719 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="countdown.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="petals-container" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header class="hero" id="heroSection">
+      <div class="hero-overlay"></div>
+      <img src="./images/hero-floral-top-left.png"
+     alt=""
+     class="hero-floral hero-floral-top-left"
+     aria-hidden="true">
+
+<img src="./images/hero-floral-top-right.png"
+     alt=""
+     class="hero-floral hero-floral-top-right"
+     aria-hidden="true">
+
+<img src="./images/hero-floral-bottom-left.png"
+     alt=""
+     class="hero-floral hero-floral-bottom-left"
+     aria-hidden="true">
+
+<img src="./images/hero-floral-bottom-right.png"
+     alt=""
+     class="hero-floral hero-floral-bottom-right"
+     aria-hidden="true">
+      <div class="hero-inner">
+        <img
+    src="./images/ganesh-mantra-ornament.png"
+    class="hero-top-ganesh"
+    alt=""
+    aria-hidden="true"
+>
+        <div class="hero-copy">
+          <p class="hero-label">You are invited</p>
+          <h1 class="hero-title">
+            <span id="brideName"></span>
+            <span class="hero-separator">&amp;</span>
+            <span id="groomName"></span>
+          </h1>
+          <p class="hero-meta" id="heroDate"></p>
+          <p class="hero-meta" id="heroVenue"></p>
+          <p class="hero-meta hero-address" id="heroAddress"></p>
+          <button class="primary-btn hero-button" id="openInviteButton">Open Invitation</button>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-sparkles"></div>
+          <div class="hero-photo" aria-label="Couple photo placeholder">
+
+    <span class="photo-label">Couple Photo</span>
+
+</div>
+        </div>
+      </div>
+    </header>
+    <!-- Save The Date Scratch Section -->
+<section class="section save-date-section" id="saveDateSection">
+
+  <img src="./images/hero-floral-top-left.png"
+       alt=""
+       class="save-floral save-floral-top-left"
+       aria-hidden="true">
+
+  <img src="./images/hero-floral-bottom-right.png"
+       alt=""
+       class="save-floral save-floral-bottom-right"
+       aria-hidden="true">
+
+  <div class="container">
+
+    <span class="save-date-tag">💍 Save the Date</span>
+
+    <h2 class="save-date-title">
+      Scratch to Reveal
+    </h2>
+
+    <p class="save-date-subtitle">
+       Gently scratch the golden card to uncover our special day.
+    </p>
+
+    <div class="scratch-card"id="scratchCard">
+      <!--<div class="scratch-instruction">
+  ✨ Scratch Here ✨
+</div>
+-->
+      <div class="scratch-date" id="revealContent">
+        <span class="date-day">02</span>
+
+        <span class="date-month">DECEMBER</span>
+
+        <span class="date-year">2026</span>
+
+        <p class="date-message">
+          We Can't Wait To Celebrate With You ❤️
+        </p>
+      </div>
+
+      <canvas id="scratchCanvas"></canvas>
+<div id="sparkles"></div>
+    </div>
+
+    </div> 
+    
+</section>
+
+    <!-- Countdown Section - dynamically driven by weddingData.weddingDate -->
+    <section class="section wc-countdown-section" id="countdownSection" aria-labelledby="countdownHeading">
+
+
+  <div class="container wc-countdown-frame">
+
+  <img src="./images/countdown/countdown floral(1).png"
+       alt=""
+       class="countdown-floral countdown-floral-top-left"
+       aria-hidden="true">
+
+  <img src="./images/countdown/countdown floral(2).png"
+       alt=""
+       class="countdown-floral countdown-floral-bottom-right"
+       aria-hidden="true">
+
+  <h2 id="countdownHeading" class="wc-countdown-title">
+
+    <h2 id="countdownHeading" class="wc-countdown-title">
+      Countdown to Our Wedding
+    </h2>
+
+    <div class="wc-countdown-grid" id="countdownGrid" role="list">
+
+      <div class="wc-countdown-card" data-key="days" role="listitem">
+        <div class="wc-countdown-value" id="cd-days">--</div>
+        <div class="wc-countdown-label">Days</div>
+      </div>
+
+      <div class="wc-countdown-card" data-key="hours" role="listitem">
+        <div class="wc-countdown-value" id="cd-hours">--</div>
+        <div class="wc-countdown-label">Hours</div>
+      </div>
+
+      <div class="wc-countdown-card" data-key="minutes" role="listitem">
+        <div class="wc-countdown-value" id="cd-minutes">--</div>
+        <div class="wc-countdown-label">Minutes</div>
+      </div>
+
+      <div class="wc-countdown-card" data-key="seconds" role="listitem">
+        <div class="wc-countdown-value" id="cd-seconds">--</div>
+        <div class="wc-countdown-label">Seconds</div>
+      </div>
+
+    </div>
+
+    <div class="countdown-message hidden" id="countdownMessage" aria-live="polite"></div>
+
+  </div>
+</section>
+
+    <main class="container hidden" id="invitationContent">
+      <section class="section intro">
+        <h2>We’re Getting Married</h2>
+        <img
+    src="./images/frame/getting-married-divider.svg"
+    alt=""
+    class="getting-married-divider"
+    aria-hidden="true">
+        <p>
+          Together with our families, we invite you to share in our joy as we exchange vows and celebrate the beginning of our new life together.
+        </p>
+      </section>
+      
+
+      <section class="section events-section">
+        <div class="events-header">
+          <h2 id="eventsTitle">Wedding Celebrations</h2>
+          <p id="eventsSubtitle">We look forward to celebrating these joyful moments with you.</p>
+        </div>
+        <div class="events-grid" id="eventDetailsGrid" aria-live="polite">
+          <!-- Event cards will be populated from weddingData.events -->
+        </div>
+      </section>
+
+
+     <section class="section photo-block save-date-final">
+
+    <!-- Bottom-left floral -->
+    <img
+        src="./images/frame/save-date-bottom-left-floral.png"
+        alt=""
+        class="save-date-floral save-date-floral-bottom-left"
+        aria-hidden="true"
+    >
+
+    <!-- Top-right floral -->
+    <img
+        src="./images/frame/save-date-top-right-floral.png"
+        alt=""
+        class="save-date-floral save-date-floral-top-right"
+        aria-hidden="true"
+    >
+
+    <!-- LEFT CONTENT -->
+    <div class="photo-text">
+
+        <img
+            src="./images/frame/save-date-lotus-divider.png"
+            alt=""
+            class="save-date-lotus-divider"
+            aria-hidden="true"
+        >
+
+        <h2>Save the Date</h2>
+
+        <p>
+            Your presence would mean the world to us. Come celebrate the union of two families, full of laughter, music, and unforgettable memories.
+        </p>
+
+        <!-- Date & Time -->
+        <div class="save-date-info">
+
+            <div class="save-date-info-item">
+                <span class="save-date-info-icon">▣</span>
+                <span>02 DECEMBER 2026</span>
+            </div>
+
+            <span class="save-date-info-divider"></span>
+
+            <div class="save-date-info-item">
+                <span class="save-date-info-icon">◷</span>
+                <span>10:00 PM</span>
+            </div>
+
+        </div>
+
+        <!-- Heart divider -->
+        <img
+            src="./images/frame/save-date-heart-divider.png"
+            alt=""
+            class="save-date-heart-divider"
+            aria-hidden="true"
+        >
+
+    </div>
+
+
+    <!-- RIGHT DATE CARD -->
+    <div class="photo-frame save-date-calendar">
+
+        <div class="save-date-calendar-inner">
+
+            <div class="calendar-weekday">
+                <span></span>
+                WEDNESDAY
+                <span></span>
+            </div>
+
+            <div class="calendar-day">
+                02
+            </div>
+
+            <div class="calendar-month">
+                DECEMBER 2026
+            </div>
+
+            <img
+                src="./images/frame/save-date-heart-divider.png"
+                alt=""
+                class="calendar-heart-divider"
+                aria-hidden="true"
+            >
+
+            <div class="calendar-caption">
+                A DAY TO REMEMBER
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+      <!-- Our Journey / A New Beginning (Arranged marriage timeline) -->
+       <!-- ===================================
+     Story Timeline V4
+=================================== -->
+<section
+  class="section story-section journey-section"
+  id="storySection"
+  aria-labelledby="storyHeading">
+
+  <!-- Background Decoration -->
+  <div class="journey-bg" aria-hidden="true"></div>
+  <div class="journey-petals" aria-hidden="true"></div>
+
+  <!-- Journey Corner Floral Decorations -->
+
+<img
+    src="./images/story/journey-floral-top-left.png"
+    class="journey-corner journey-corner-top-left"
+    alt=""
+    aria-hidden="true"
+>
+
+<img
+    src="./images/story/journey-floral-top-right.png"
+    class="journey-corner journey-corner-top-right"
+    alt=""
+    aria-hidden="true"
+>
+
+<img
+    src="./images/story/journey-floral-bottom-left.png"
+    class="journey-corner journey-corner-bottom-left"
+    alt=""
+    aria-hidden="true"
+>
+
+<img
+    src="./images/story/journey-floral-bottom-right.png"
+    class="journey-corner journey-corner-bottom-right"
+    alt=""
+    aria-hidden="true"
+>
+<!-- Journey Decorative Art -->
+
+<img
+    src="./images/story/journey-moments-art1.png"
+    class="journey-art journey-art-1"
+    alt=""
+    aria-hidden="true"
+>
+
+<img
+    src="./images/story/journey-moments-art2.png"
+    class="journey-art journey-art-2"
+    alt=""
+    aria-hidden="true"
+>
+
+<img
+    src="./images/story/journey-moments-art3.png"
+    class="journey-art journey-art-3"
+    alt=""
+    aria-hidden="true"
+>
+
+  <!-- Header -->
+   
+  <header class="journey-header">
+<div class="journey-top-ornament"></div>
+    <div class="journey-header-top">
+      <span class="journey-line"></span>
+      <span class="journey-line"></span>
+    </div>
+
+    <h2 id="storyHeading" class="journey-title">
+      OUR JOURNEY
+    </h2>
+
+    <p
+      id="storySubtitle"
+      class="journey-subtitle">
+      Three beautiful chapters, one forever love story
+    </p>
+
+    <div class="journey-header-bottom">
+      <span class="journey-line"></span>
+      <span class="journey-line"></span>
+    </div>
+
+  </header>
+
+  <!-- Timeline Container -->
+  <div
+    id="journeyTimeline"
+    class="journey-timeline"
+    aria-live="polite">
+
+    <!-- Timeline generated from JavaScript -->
+
+  </div>
+<div class="journey-bottom-ornament"></div>
+</section>
+
+      <!-- ==========================================
+     WEDDING GALLERY
+     ========================================== -->
+
+<section class="section gallery-section">
+
+    <!-- Top Left Floral -->
+    <img
+        src="./images/frame/gallery-floral-top-left.png"
+        class="gallery-floral gallery-floral-top-left"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <!-- Top Right Floral -->
+    <img
+        src="./images/frame/gallery-floral-top-right.png"
+        class="gallery-floral gallery-floral-top-right"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <!-- Gallery Header -->
+    <div class="gallery-header">
+
+        <div class="gallery-ornament"></div>
+
+        <h2 class="gallery-title">
+            <span class="gallery-wedding">Wedding</span>
+            <em class="gallery-script">Gallery</em>
+        </h2>
+
+        <p class="gallery-main-subtitle">
+            A glimpse of our beautiful memories.
+        </p>
+
+        <div class="gallery-heart-divider">
+            <span></span>
+            <b>♥</b>
+            <span></span>
+        </div>
+
+        <p class="gallery-subtitle">
+            CAPTURING BEAUTIFUL MOMENTS FOREVER
+        </p>
+
+    </div>
+
+    <!-- Gallery Cards -->
+    <div class="gallery-grid" id="galleryGrid">
+        <!-- Gallery items populated from script.js -->
+    </div>
+
+</section>
+<p class="gallery-subtitle">
+    Capturing Beautiful Moments Forever
+</p>
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Gallery items populated from script.js -->
+        </div>
+      </section>
+
+    <!-- ==========================================
+     PRE-WEDDING FILM
+========================================== -->
+
+<section class="section video-section">
+
+    <!-- LEFT FILIGREE -->
+<img
+    src="./images/frame/video-right-side-filigree.png"
+    class="video-side-filigree video-left-filigree"
+    alt=""
+    aria-hidden="true"
+>
+
+<!-- RIGHT FILIGREE -->
+<img
+    src="./images/frame/video-left-side-filigree.png"
+    class="video-side-filigree video-right-filigree"
+    alt=""
+    aria-hidden="true"
+>
+
+
+    <!-- TOP LEFT FLORAL -->
+    <img
+        src="./images/frame/prewedding-top-left-side-filigree.png"
+        class="video-deco video-top-left"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <!-- TOP CENTER LOTUS -->
+    <img
+        src="./images/frame/prewedding-lotus-divider.png"
+        class="video-deco video-top-center"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <!-- TOP RIGHT FLORAL -->
+    <img
+        src="./images/frame/prewedding-top-right-side-filigree.png"
+        class="video-deco video-top-right"
+        alt=""
+        aria-hidden="true"
+    >
+
+
+    <!-- HEADING -->
+    <h2>Our Pre-wedding Film</h2>
+
+
+    <!-- HEART DIVIDER — JUST BELOW HEADING -->
+    <img
+        src="./images/frame/prewedding-heart-divider.png"
+        class="video-deco video-heart-divider"
+        alt=""
+        aria-hidden="true"
+    >
+
+
+    <!-- VIDEO -->
+<div class="video-frame">
+
+    <!-- LOCAL VIDEO -->
+    <video
+        id="preWeddingVideo"
+        class="prewedding-local-video"
+        controls
+        muted
+        playsinline>
+    </video>
+
+    <!-- YOUTUBE VIDEO -->
+    <iframe
+        id="preWeddingYoutube"
+        class="prewedding-youtube hidden"
+        title="Our Pre-Wedding Film"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+</div>
+
+    <!-- LOVE STORY / COMING SOON -->
+    <div class="video-fallback hidden" id="videoFallback">
+
+    <!-- LEFT COMING SOON FLORAL -->
+    <img
+        src="./images/frame/prewedding-coming-soon-left.png"
+        class="coming-soon-side coming-soon-left"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <!-- RIGHT COMING SOON FLORAL -->
+    <img
+        src="./images/frame/prewedding-coming-soon-right.png"
+        class="coming-soon-side coming-soon-right"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <!-- tumhara existing video-fallback-content yahan -->
+
+        <div class="video-fallback-content">
+
+            <h3>
+    <span class="love-story-title">Our Love Story Is</span>
+    <span class="coming-soon">Coming Soon</span>
+</h3>
+
+            <p>
+                A beautiful pre-wedding film will be available here soon.
+                Until then, enjoy our captured moments and celebrate this
+                journey with us.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM LEFT FLORAL -->
+    <img
+        src="./images/frame/prewedding-bottom-left-floral.png"
+        class="video-deco video-bottom-left"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <!-- BOTTOM CENTER ARROW DIVIDER -->
+    <img
+        src="./images/frame/prewedding-aerrow-divider.png"
+        class="video-deco video-bottom-center"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <!-- BOTTOM RIGHT FLORAL -->
+    <img
+        src="./images/frame/prewedding-bottom-right-floral.png"
+        class="video-deco video-bottom-right"
+        alt=""
+        aria-hidden="true"
+    >
+
+</section>
+
+<section class="section rsvp-section">
+  <div class="rsvp-panel">
+    <img src="./images/frame/rsvp-tops-left.png"
+         class="rsvp-floral rsvp-top-left"
+         alt="">
+
+    <img src="./images/frame/rsvp-tops-right.png"
+         class="rsvp-floral rsvp-top-right"
+         alt="">
+
+    <img src="./images/frame/rsvp-bottoms-left.png"
+         class="rsvp-floral rsvp-bottom-left"
+         alt="">
+
+    <img src="./images/frame/rsvp-bottoms-right.png"
+         class="rsvp-floral rsvp-bottom-right"
+         alt="">
+
+    <h2>Join Our Celebration</h2>
+
+    <p>Your response helps us make the celebration even more special.</p>
+
+    <form id="rsvpForm">
+
+      <label for="guestName">Name</label>
+
+      <input
+        type="text"
+        id="guestName"
+        name="guestName"
+        placeholder="Your full name"
+        required
+      />
+
+      <label for="guestMobile">Mobile Number</label>
+
+      <input
+        type="tel"
+        id="guestMobile"
+        name="guestMobile"
+        placeholder="Enter your mobile number"
+        maxlength="10"
+        pattern="[0-9]{10}"
+        required
+      />
+
+      <label for="guestMessage">Message</label>
+
+      <textarea
+        id="guestMessage"
+        name="guestMessage"
+        rows="4"
+        placeholder="Any special notes or song requests"
+      ></textarea>
+
+      <button
+        type="submit"
+        class="secondary-btn rsvp-submit-btn"
+      >
+        Confirm Your Presence🥰
+      </button>
+
+      <p class="status" id="rsvpStatus"></p>
+
+    </form>
+          <div class="rsvp-divider">
+  <span>OR</span>
+</div>
+          <a id="whatsappRsvpLink" class="whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer">
+    <img src="./images/whatsapp-logo.png" alt="WhatsApp">
+    RSVP via WhatsApp
+</a>
+        </div>
+      </section>
+
+      <section class="section venue-section">
+        <div>
+          <h2>Location</h2>
+          <div class="venue-card">
+            <div class="venue-card-header">
+              <div class="venue-icon">📍</div>
+              <div>
+                <h3 class="venue-name" id="venueName"></h3>
+              </div>
+            </div>
+            <p id="venueDescription"></p>
+            <p id="venueAddressText">
+              <span id="venueAddressTextValue"></span>
+            </p>
+          </div>
+        </div>
+        <div class="map-card">
+          <a id="venueMapLink" class="primary-btn" href="#" target="_blank" rel="noopener noreferrer">Get Directions</a>
+        </div>
+        <div class="map-embed hidden" id="mapEmbedContainer"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>With love, <span id="footerNames"></span></p>
+    </footer>
+
+    <audio id="weddingMusic" preload="auto" loop></audio>
+    <button id="musicToggleButton" class="music-toggle" type="button" aria-pressed="false">Music Off</button>
+    <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-hidden="true">
+      <button type="button" class="lightbox-close" aria-label="Close gallery preview">×</button>
+      <img id="lightboxImage" alt="" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="scratch-card.js"></script>
+  <script src="petals.js"></script>
+</body>
+</html>

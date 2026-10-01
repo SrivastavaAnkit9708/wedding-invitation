@@ -1,0 +1,56 @@
+/* ==========================================
+   Falling Rose Petals - Module 1
+========================================== */
+
+.petals-container{
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+}
+
+.petal{
+
+    position: absolute;
+
+    top: -80px;
+
+    width: 42px;
+
+    height: auto;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    will-change: transform;
+
+
+}
+
+@keyframes petalFall{
+
+    from{
+
+        transform:
+            translateY(-120px)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+    }
+
+}

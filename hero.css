@@ -1,0 +1,508 @@
+/* ==========================================================
+                    HERO SECTION (CLEAN & BALANCED)
+   ========================================================== */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    padding: 40px 0;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 900ms ease, transform 900ms ease;
+    
+    /* Blush Pink Gradients */
+    background:
+        radial-gradient(circle at 12% 12%, rgba(255, 204, 213, 0.55) 0%, rgba(255, 220, 227, 0.25) 20%, transparent 40%),
+        radial-gradient(circle at 88% 10%, rgba(255, 214, 224, 0.45) 0%, transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(255, 225, 230, 0.65) 0%, transparent 50%),
+        linear-gradient(180deg, #fffafa 0%, #fdeeeed0 30%, #fbdcdb8b 65%, #fff0f1 100%);
+}
+
+.hero.hero-loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 2. Hero Overlay Adjustment for Warm Pink Glow */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at top left, rgba(255, 235, 238, 0.8), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(248, 187, 208, 0.25), transparent 35%);
+    pointer-events: none;
+}
+
+/* Background watermark vectors */
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 36%;
+    height: 36%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.hero::before {
+    top: -4%;
+    left: -2%;
+    transform: rotate(-8deg);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'><g fill='none' stroke='%23b38b5b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M40 300c60-90 140-120 220-110s160 50 220 110' opacity='0.9'/><path d='M60 330c70-70 150-90 230-80s150 40 220 90' opacity='0.7'/></g></svg>");
+}
+
+.hero::after {
+    bottom: -6%;
+    right: -6%;
+    transform: rotate(14deg) scale(1.1);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'><g fill='none' stroke='%23b38b5b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M520 300c-60 90-140 120-220 110s-160-50-220-110' opacity='0.9'/><path d='M500 270c-70 70-150 90-230 80s-150-40-220-90' opacity='0.7'/></g></svg>");
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 5;
+    width: min(1240px, calc(100% - 3rem));
+    margin: 0 auto;
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    gap: 3rem;
+    align-items: center;
+    min-height: 82vh;
+}
+
+/* ==========================================
+   TEXT / COPY CONTENT
+========================================== */
+
+.hero-copy {
+    display: grid;
+    gap: 1.2rem;
+    align-self: center;
+max-width: 620px;
+    /* NEW */
+    padding-left: 180px;
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero.hero-loaded .hero-copy {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-label {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    padding: 0.45rem 1rem;
+    border: 1px solid rgba(179,162,79,.35);
+    border-radius: 999px;
+    background: rgba(255,255,255,.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+
+.hero-title {
+    margin: 0;
+    margin-bottom: -0.15em;
+    letter-spacing: 0.02em;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3.3rem, 6vw, 5rem);
+    color: #3b2a24;
+    text-shadow: 0 6px 18px rgba(179,139,91,0.06);
+    max-width: 11ch;
+line-height: .95;
+text-wrap: balance;
+}
+
+.hero-separator {
+    display: block;
+    margin: 0.15rem 0 0.25rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    line-height: 1;
+    color: var(--gold);
+}
+
+.hero-meta {
+    margin: 0;
+    
+    /* Elegant Golden Shades */
+    color: #b88445; /* Dark Warm Gold (Readable & Premium) */
+    
+    /* Ya fir agar aap exact theme gold use karna chahte hain: */
+    /* color: var(--gold); */
+
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-weight: 600; /* Subtle bolding taaki golden text soft background par readable lage */
+    max-width: 46ch;
+    text-wrap: pretty;
+}
+
+.hero-address {
+    font-style: italic;
+}
+
+/* Premium Button */
+.hero-button {
+    margin-top: 1.5rem;
+    padding: 1.05rem 2.35rem;
+    width: max-content;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #b88445 0%, #ddb06e 55%, #f5dfb8 100%);
+    color: #2b1a14;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 14px 36px rgba(184,132,69,.24), inset 0 1px 0 rgba(255,255,255,.45);
+    transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+    letter-spacing: .04em;
+    font-size: .96rem;
+}
+
+.hero-button:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 22px 50px rgba(184,132,69,.32);
+}
+
+.hero-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(110deg, transparent, rgba(255,255,255,.45), transparent);
+    transform: skewX(-20deg);
+    animation: heroButtonShine 5s ease-in-out infinite;
+}
+
+@keyframes heroButtonShine {
+    0%, 70% { left: -120%; }
+    100% { left: 160%; }
+}
+
+.hero-button:active {
+    transform: translateY(-1px) scale(.99);
+}
+
+/* ==========================================
+   PHOTO CONTAINER & LUXURY FRAME
+========================================== */
+
+.hero-visual {
+    display: grid;
+    justify-items: start;
+    align-items: center;
+    opacity: 0;
+    
+    /* LEFT SHIFT CODE: -100px se photo left me aayegi */
+    transform: translate(-100px, -55px); 
+    
+    transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
+    position: relative;
+    isolation: isolate;
+}
+
+/* Loaded state par bhi left shift maintain rakhne ke liye: */
+.hero.hero-loaded .hero-visual {
+    opacity: 1;
+    transform: translate(-100px, 60px); /* Yahan bhi -100px rakhein */
+}
+
+/* Golden Glow */
+.hero-visual::before {
+    content: "";
+    position: absolute;
+    width: 680px;
+    height: 680px;
+    border-radius: 50%;
+    background: radial-gradient(
+    circle,
+    rgba(255,235,170,.42) 0%,
+    rgba(255,214,120,.24) 28%,
+    rgba(255,214,120,.12) 55%,
+    transparent 78%
+);
+    filter: blur(40px);
+    z-index: -1;
+    animation: heroGlow 6s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+    0%, 100% { transform: scale(1); opacity: .75; }
+    50% { transform: scale(1.08); opacity: 1; }
+}
+
+.hero-photo {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 5;
+    background: #fff;
+    border: none;
+    border-radius: 18px;
+    position: relative;
+    isolation: isolate;
+    box-shadow:
+0 20px 45px rgba(0,0,0,.15);
+    padding: 14px;
+    overflow: hidden;
+    transition: .35s ease;
+}
+
+/*.hero-photo::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px solid rgba(197,154,73,.75);
+    border-radius: 12px;
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+    background: url("images/frame/frame-modern-luxury.svg") center/100% 100% no-repeat;
+}
+*/
+
+.hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: -22px;
+    z-index: -1;
+    border-radius: 22px;
+    background: radial-gradient(circle, rgba(233,196,129,.24) 0%, rgba(233,196,129,.12) 45%, transparent 75%);
+    pointer-events: none;
+}
+
+.hero-photo:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow: 0 28px 55px rgba(0,0,0,.20);
+}
+
+@keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px) rotate(-0.2deg); }
+}
+
+.hero-photo.loaded {
+    animation: floaty 6s ease-in-out infinite;
+    transform: translateZ(0);
+}
+
+/* Empty Photo Fallback */
+.photo-label { display: none; }
+.hero-photo.empty .photo-label {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    padding: 0.75rem 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    background: rgba(255,255,255,0.84);
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(61,45,42,0.08);
+}
+
+.hero-photo.empty {
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), rgba(242, 217, 204, 0.95));
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-photo.empty::before {
+    content: '📷';
+    position: absolute;
+    font-size: 2.8rem;
+    color: rgba(61, 45, 42, 0.3);
+}
+
+.hero-photo.empty::after {
+    content: 'Couple photo unavailable';
+    position: absolute;
+    bottom: 1.25rem;
+    font-size: 0.95rem;
+    color: rgba(61, 45, 42, 0.55);
+}
+
+/* Corner Ornaments */
+.hero-photo .corner {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.hero-photo .corner img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.corner-tl { top: -28px; left: -28px; }
+.corner-tr { top: -28px; right: -28px; }
+.corner-bl { bottom: -28px; left: -28px; }
+.corner-br { bottom: -28px; right: -28px; }
+
+/* ==========================================
+   FLORAL CORNER DECORATIONS (FIXED SPREAD)
+========================================== */
+
+/* 3. Floral Corner Images - Soft Pink Tinting Effect */
+.hero-floral {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    opacity: .95;
+    max-width: none !important;
+
+   
+}
+
+.hero-floral-top-left {
+    top: -10px;
+    left: -5px;
+    width: 420px;
+    transform: scale(1.05);
+    transform-origin: top left;
+}
+
+.hero-floral-top-right {
+    top: -10px;
+    right: -10px;
+    width: 420px;
+    transform: scale(1.05);
+    transform-origin: top right;
+}
+
+.hero-floral-bottom-left {
+    bottom: -10px;
+    left: -10px;
+    width: 300px;
+    transform: scale(1.05);
+    transform-origin: bottom left;
+}
+
+.hero-floral-bottom-right {
+    bottom: -10px;
+    right: -10px;
+    width: 300px;
+    transform: scale(1.05);
+    transform-origin: bottom right;
+}
+
+/* ==========================================
+   GANESH TOP DECORATION
+========================================== */
+
+img.hero-top-ganesh {
+    position: absolute !important;
+    width: 600px !important;
+    max-width: 600px !important;
+    height: auto !important;
+
+    top: -80px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    z-index: 3 !important;
+    pointer-events: none !important;
+    user-select: none !important;
+}
+/* ==========================================
+   RESPONSIVE LAYOUT
+========================================== */
+
+@media (max-width: 860px) {
+    .hero-inner { 
+        grid-template-columns: 1fr; 
+        gap: 1.25rem; 
+    }
+    .hero-visual { 
+        order: -1; 
+        display: flex; 
+        justify-content: center; 
+    }
+    .hero-photo { 
+        max-width: 360px; 
+        aspect-ratio: 3/4; 
+    }
+    .hero-title { 
+        font-size: clamp(2.4rem, 7vw, 4.2rem); 
+    }
+    .hero-floral-top-left,
+    .hero-floral-top-right,
+    .hero-floral-bottom-left,
+    .hero-floral-bottom-right {
+        width: 420px; /* Mobile par automatic adjust hoga */
+    }
+}
+
+.hero-sparkles{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:2;
+    overflow:hidden;
+}
+
+.hero-sparkles::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+      radial-gradient(circle, rgba(255,245,210,.9) 1.5px, transparent 2px),
+      radial-gradient(circle, rgba(255,225,170,.8) 1px, transparent 2px),
+      radial-gradient(circle, rgba(255,255,255,.85) 1px, transparent 2px);
+
+    background-size:
+      180px 180px,
+      240px 240px,
+      320px 320px;
+
+    background-position:
+      30px 60px,
+      120px 160px,
+      80px 220px;
+
+    animation: heroSparkle 10s linear infinite;
+
+    opacity:.55;
+}
+
+@keyframes heroSparkle{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-20px);
+    }
+}
+
