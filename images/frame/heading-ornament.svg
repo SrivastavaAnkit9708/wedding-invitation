@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -30 1700 180" width="100%" height="100%">
+  <defs>
+    <!-- Luxury Metallic Gold Gradient (#A97A12 → #F4D35E → #8C6412) -->
+    <linearGradient id="royalGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A97A12"/>
+      <stop offset="30%" stop-color="#F4D35E"/>
+      <stop offset="50%" stop-color="#FFF5C3"/> <!-- For bright reflective center -->
+      <stop offset="70%" stop-color="#F4D35E"/>
+      <stop offset="100%" stop-color="#8C6412"/>
+    </linearGradient>
+
+    <!-- Side Lines Gradient to match the exact tapering effect -->
+    <linearGradient id="leftLineGrad" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#F4D35E"/>
+      <stop offset="30%" stop-color="#A97A12"/>
+      <stop offset="100%" stop-color="#8C6412" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="rightLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F4D35E"/>
+      <stop offset="30%" stop-color="#A97A12"/>
+      <stop offset="100%" stop-color="#8C6412" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- LEFT SIDE: Long Tapered Horizontal Line (Extended to the absolute left edge) -->
+  <path d="M 384 60 L 10 60" stroke="url(#leftLineGrad)" stroke-width="4.8" stroke-linecap="round"/>
+
+  <!-- CENTER ORNAMENT: Uniformly Scaled by 1.6x around (800,60) -->
+  <g fill="url(#royalGoldGrad)" stroke="url(#royalGoldGrad)" stroke-width="0.48" transform="translate(800, 60) scale(1.6) translate(-800, -60)">
+    
+    <!-- Exact Center: Faceted Diamond Structure -->
+    <!-- Outer Diamond Shape -->
+    <path d="M 800 25 L 818 60 L 800 95 L 782 60 Z" />
+    <!-- Inner Faceted Diamond Cut (Flat Style Layering) -->
+    <path d="M 800 33 L 811 60 L 800 87 L 789 60 Z" fill="#FFF5C3" opacity="0.8"/>
+    <!-- Small Top and Bottom Sharp Accent Diamonds -->
+    <path d="M 800 12 L 804 18 L 800 24 L 796 18 Z" />
+    <path d="M 800 96 L 804 102 L 800 108 L 796 102 Z" />
+
+    <!-- LEFT SIDE SCROLLS (Infinity/Floral Inspired) -->
+    <!-- Inner S-Scroll connecting to Center Diamond -->
+    <path d="M 776 60 C 765 42, 740 40, 730 55 C 720 70, 735 85, 750 78 C 762 72, 758 55, 745 55 C 734 55, 730 65, 738 70 C 742 72, 746 68, 743 65" fill="none" stroke="url(#royalGoldGrad)" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Main Sweeping Infinity Loop (Left) -->
+    <path d="M 724 58 C 700 32, 650 35, 635 60 C 620 85, 665 92, 685 72 C 700 58, 688 42, 670 45 C 655 48, 652 64, 665 68 C 673 70, 678 63, 674 58" fill="none" stroke="url(#royalGoldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Outer Transition Accent near Line -->
+    <path d="M 625 60 C 585 45, 560 52, 545 60 C 560 68, 585 75, 625 60 Z" />
+
+    <!-- RIGHT SIDE SCROLLS (Perfect Mirror Image of Left Side) -->
+    <!-- Inner S-Scroll connecting to Center Diamond -->
+    <path d="M 824 60 C 835 42, 860 40, 870 55 C 880 70, 865 85, 850 78 C 838 72, 842 55, 855 55 C 866 55, 870 65, 862 70 C 858 72, 854 68, 857 65" fill="none" stroke="url(#royalGoldGrad)" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Main Sweeping Infinity Loop (Right) -->
+    <path d="M 876 58 C 900 32, 950 35, 965 60 C 980 85, 935 92, 915 72 C 900 58, 912 42, 930 45 C 945 48, 948 64, 935 68 C 927 70, 922 63, 926 58" fill="none" stroke="url(#royalGoldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Outer Transition Accent near Line -->
+    <path d="M 975 60 C 1015 45, 1040 52, 1055 60 C 1040 68, 1015 75, 975 60 Z" />
+
+  </g>
+
+  <!-- RIGHT SIDE: Long Tapered Horizontal Line (Extended to the absolute right edge) -->
+  <path d="M 1216 60 L 1690 60" stroke="url(#rightLineGrad)" stroke-width="4.8" stroke-linecap="round"/>
+</svg>

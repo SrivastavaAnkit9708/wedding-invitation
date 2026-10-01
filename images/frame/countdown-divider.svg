@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 300 30"
+     preserveAspectRatio="xMidYMid meet">
+
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9d6f00"/>
+      <stop offset="35%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#f6dd8d"/>
+      <stop offset="100%" stop-color="#9d6f00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Ornament -->
+  <path d="M18 15
+           C24 8 34 8 38 15
+           C34 22 24 22 18 15"
+        fill="url(#gold)"/>
+
+  <!-- Left Line -->
+  <line x1="42" y1="15"
+        x2="132" y2="15"
+        stroke="url(#gold)"
+        stroke-width="2.4"
+        stroke-linecap="round"/>
+
+  <!-- Center Ornament -->
+  <circle cx="150" cy="15" r="3.2" fill="url(#gold)"/>
+
+  <path d="M150 4
+           C143 7 143 13 150 16
+           C157 13 157 7 150 4"
+        fill="url(#gold)"/>
+
+  <path d="M150 26
+           C143 23 143 17 150 14
+           C157 17 157 23 150 26"
+        fill="url(#gold)"/>
+
+  <!-- Right Line -->
+  <line x1="168" y1="15"
+        x2="258" y2="15"
+        stroke="url(#gold)"
+        stroke-width="2.4"
+        stroke-linecap="round"/>
+
+  <!-- Right Ornament -->
+  <path d="M282 15
+           C276 8 266 8 262 15
+           C266 22 276 22 282 15"
+        fill="url(#gold)"/>
+
+</svg>
