@@ -278,7 +278,7 @@
 
     overflow:hidden;
 
-    background-image:url("../images/frame/countdown-frame.svg");
+    background-image:url("./images/frame/countdown-frame.svg");
 
     background-repeat:no-repeat;
 
@@ -295,7 +295,7 @@
     transform:translateX(-50%);
     width:min(1200px,90%);
     height:52px;
-    background:url("../images/frame/heading-ornament.svg")
+    background:url("./images/frame/heading-ornament.svg")
                center/contain no-repeat;
     pointer-events:none;
 }
