@@ -2417,12 +2417,12 @@ box-shadow:
 
 .events-header::before{
     left:22%;
-    background-image:url("../images/frame/wedding-celebrations-floral-left-side.png");
+    background-image:url("./images/frame/wedding-celebrations-floral-left-side.png");
 }
 
 .events-header::after{
     right:22%;
-    background-image:url("../images/frame/wedding-celebrations-floral-right-side.png");
+    background-image:url("./images/frame/wedding-celebrations-floral-right-side.png");
 }
 
 .events-header h2,
