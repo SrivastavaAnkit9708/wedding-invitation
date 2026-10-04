@@ -141,3 +141,25 @@
     }
 
 }
+/* ==========================================
+   MOBILE — HERO BOTTOM FLORALS
+========================================== */
+
+@media (max-width: 768px) {
+
+    .hero-floral-bottom-left,
+    .hero-floral-bottom-right {
+        width: 125px !important;
+        height: auto !important;
+        bottom: 0 !important;
+    }
+
+    .hero-floral-bottom-left {
+        left: -2px !important;
+    }
+
+    .hero-floral-bottom-right {
+        right: -2px !important;
+    }
+
+}
