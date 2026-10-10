@@ -440,9 +440,19 @@ img.hero-top-ganesh {
 ========================================== */
 
 @media (max-width: 860px) {
-    .hero-inner { 
-        grid-template-columns: 1fr; 
-        gap: 1.25rem; 
+
+    .hero {
+        min-height: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        min-height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
     .hero-visual { 
         order: -1; 
