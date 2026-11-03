@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="hero.css" />
   <link rel="stylesheet" href="countdown.css">
+  <link rel="stylesheet" href="petals.css">
+  <link rel="stylesheet" href="mobile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -63,6 +65,10 @@
 </div>
         </div>
       </div>
+      <div class="scroll-down-indicator" id="scrollDownIndicator">
+    <span>SCROLL DOWN</span>
+    <div class="scroll-down-arrow">↓</div>
+</div>
     </header>
     <!-- Save The Date Scratch Section -->
 <section class="section save-date-section" id="saveDateSection">
@@ -445,13 +451,6 @@
     </div>
 
 </section>
-<p class="gallery-subtitle">
-    Capturing Beautiful Moments Forever
-</p>
-        <div class="gallery-grid" id="galleryGrid">
-          <!-- Gallery items populated from script.js -->
-        </div>
-      </section>
 
     <!-- ==========================================
      PRE-WEDDING FILM
@@ -677,7 +676,8 @@
         </div>
       </section>
 
-      <section class="section venue-section">
+<section class="section venue-section" style="position: relative;">
+
         <div>
           <h2>Location</h2>
           <div class="venue-card">
@@ -694,8 +694,58 @@
           </div>
         </div>
         <div class="map-card">
-          <a id="venueMapLink" class="primary-btn" href="#" target="_blank" rel="noopener noreferrer">Get Directions</a>
-        </div>
+  <a id="venueMapLink" class="primary-btn" href="#" target="_blank" rel="noopener noreferrer">Get Directions</a>
+
+  <img
+    src="images/ankit-creation.png"
+    alt="Designed and created by Ankit Srivastava"
+    class="creator-credit-image"
+  >
+</div>
+
+<div class="theme-switcher" id="themeSwitcher">
+    <button
+        type="button"
+        class="theme-toggle"
+        id="themeToggle"
+        aria-label="Choose website colour theme"
+        aria-expanded="false"
+   
+    <span class="theme-button-label">Choose Theme</span>
+
+    <span class="theme-preview-colors" aria-hidden="true">
+        <span class="preview-dot preview-royal"></span>
+        <span class="preview-dot preview-blush"></span>
+        <span class="preview-dot preview-sage"></span>
+        <span class="preview-dot preview-burgundy"></span>
+    </span>
+</button>
+
+<div class="theme-panel" id="themePanel" hidden>
+    <p>Choose Your Theme</p>
+
+    <button type="button" class="theme-option" data-theme="royal">
+        <span class="theme-dot royal-dot"></span>
+        Royal Gold
+    </button>
+
+    <button type="button" class="theme-option" data-theme="blush">
+        <span class="theme-dot blush-dot"></span>
+        Romantic Blush
+    </button>
+
+    <button type="button" class="theme-option" data-theme="sage">
+        <span class="theme-dot sage-dot"></span>
+        Sage Elegance
+    </button>
+
+    <button type="button" class="theme-option" data-theme="burgundy">
+        <span class="theme-dot burgundy-dot"></span>
+        Burgundy Luxe
+    </button>
+</div>
+
+</div>
         <div class="map-embed hidden" id="mapEmbedContainer"></div>
       </section>
     </main>
@@ -712,6 +762,7 @@
       <p class="lightbox-caption" id="lightboxCaption"></p>
     </div>
   </div>
+
   <script src="script.js"></script>
   <script src="scratch-card.js"></script>
   <script src="petals.js"></script>

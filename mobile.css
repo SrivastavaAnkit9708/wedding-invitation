@@ -150,6 +150,12 @@
         overflow-wrap: anywhere;
     }
 
+.hero-copy {
+    padding-left: 0;
+    max-width: 100%;
+    min-width: 0;
+    gap: 0.6rem;
+}
 
     /* AMPERSAND BETWEEN NAMES */
 

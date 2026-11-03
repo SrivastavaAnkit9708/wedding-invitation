@@ -15,24 +15,7 @@
 
     overflow:hidden;
 
-  background:
-    radial-gradient(circle at top left,
-        rgba(255,220,232,.40),
-        transparent 38%),
-
-    radial-gradient(circle at top right,
-        rgba(255,228,236,.30),
-        transparent 35%),
-
-    radial-gradient(circle at bottom,
-        rgba(255,210,225,.25),
-        transparent 45%),
-
-    linear-gradient(
-        to bottom,
-        #FFF8FB,
-        #FFF3F8
-    );
+ background: var(--bg);
 }
 
 .wc-countdown-section .container{
@@ -54,7 +37,7 @@
 
     font-weight:600;
 
-    color:#5b4332;
+    color: var(--text);
 
     letter-spacing:.05em;
 
@@ -127,7 +110,7 @@
             rgba(255,250,242,.92) 100%
         );
 
-    border:1px solid rgba(212,175,55,.28);
+    border:2px solid rgba(212,175,55,.28);
 
     border-radius:28px;
 
@@ -226,7 +209,7 @@
 
     font-weight:600;
 
-    color:#6b4b2d;
+    color: var(--text);
 
     line-height:1;
 
@@ -285,6 +268,8 @@
     background-position:center;
 
     background-size:100% 100%;
+    border: 2px solid var(--accent);
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .wc-countdown-frame::before{
@@ -299,6 +284,12 @@
                center/contain no-repeat;
     pointer-events:none;
 }
+
+.wc-countdown-section:hover .wc-countdown-frame {
+    border-color: #D4AF37;
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
+}
+
 /* ==========================================
    COUNTDOWN FLORAL CORNERS
 ========================================== */

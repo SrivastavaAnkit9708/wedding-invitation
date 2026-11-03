@@ -13,7 +13,7 @@ const weddingData = {
   subtitle: "Gently scratch the golden card to uncover our special day.",
   message: "We Can't Wait To Celebrate With You ❤️"
 },
-  venue: 'Indu Niwas, Dehri on sone, Bihar',
+  venue: 'Lala Colony, Indu Niwas, Dehri on sone, Bihar',
   address: 'Dehri on sone, Bihar',
   venueDescription: 'Where love begins, memories are made, and families come together.',
   whatsapp: '91 9708256946',
@@ -52,7 +52,7 @@ const weddingData = {
       enabled: true,
       date: '01 December 2026',
       time: '08:00 AM',
-      venue: 'Indu Niwas, Dehri on sone, Bihar',
+      venue: 'Lala Colony, Indu Niwas, Dehri on sone, Bihar',
     },
     {
       title: 'Mehendi',
@@ -66,7 +66,7 @@ const weddingData = {
       enabled: true,
       date: '02 December 2026',
       time: '10:00 PM',
-      venue: 'Indu Niwas, Dehri on sone, Bihar',
+      venue: 'Lala Colony, Indu Niwas, Dehri on sone, Bihar',
     },
     {
       title: 'Reception',
@@ -82,31 +82,24 @@ const weddingData = {
     subtitle: 'A glimpse of our beautiful memories.',
   },
   gallery: [
-    {
-      image: 'images/Ankit1.jpg',
-      caption: 'Cherished Moments',
-    },
-    {
-      image: 'images/Ankit2.jpg',
-      caption: 'Family Blessings',
-    },
-    {
-      image: 'images/Ankit3.png',
-      caption: 'Sacred Traditions',
-    },
-    {
-      image: 'images/Ankit4.png',
-      caption: 'A Day to Remember',
-    },
-    {
-      image: 'images/couple.jpg.png',
-      caption: 'Forever Begins Here',
-    },
-    {
-  image: 'images/Ankit6.jpg',
-  caption: 'Together Forever',
+{
+image: 'images/Ankit2.jpg',
+caption: 'Family Blessings',
 },
-  ],
+{
+image: 'images/Ankit3.png',
+caption: 'Sacred Traditions',
+},
+{
+image: 'images/couple.jpg.png',
+caption: 'Forever Begins Here',
+},
+{
+image: 'images/Ankit6.jpg',
+caption: 'Together Forever',
+},
+],
+
   story: {
     title: 'Our Journey',
     subtitle: 'Two families, one beautiful beginning.',
@@ -1012,7 +1005,7 @@ function applyWeddingData() {
   if (whatsappRsvpLink) {
     const cleanNumber = (weddingData.rsvp?.whatsapp || weddingData.whatsapp || '').replace(/[^\d]/g, '');
     if (cleanNumber && weddingData.rsvp?.showWhatsappButton !== false) {
-      const message = `Hello ${weddingData.brideName} & ${weddingData.groomName}, I would love to RSVP for your wedding.`;
+      const message = `Hello ${weddingData.brideName} & ${weddingData.groomName}, I’m happy to confirm my presence at your wedding. Wishing you both a lifetime of love, happiness and beautiful memories. 💕`;
       whatsappRsvpLink.href = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
       whatsappRsvpLink.classList.remove('disabled');
     } else {
@@ -1298,6 +1291,7 @@ if (openInviteButton) {
     if (invitationContent) invitationContent.classList.remove('hidden');
     if (heroSection) heroSection.scrollIntoView({ behavior: 'smooth' });
     openInviteButton.textContent = 'Invitation Opened';
+    document.getElementById('scrollDownIndicator')?.classList.add('visible');
     openInviteButton.disabled = true;
 
     if (weddingMusic && weddingMusic.paused) {
@@ -1393,7 +1387,7 @@ if (rsvpForm) {
       }
       return;
     }
-
+/*
     if (!attendance) {
       if (rsvpStatus) {
         rsvpStatus.textContent = '❌ Please select your attendance status.';
@@ -1401,13 +1395,25 @@ if (rsvpForm) {
       }
       return;
     }
+*/
+// Success
+if (rsvpStatus) {
+  rsvpStatus.innerHTML = `
+    <div style="line-height: 1.8;">
+      <strong>✓ Thank You, ${name.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}!</strong>
+      <br>
+      Your response has been received.
+      <br>
+      💌 Please click the <strong>RSVP via WhatsApp</strong> button below
+      and send us your confirmation.
+      <br>
+      ❤️ We look forward to celebrating with you!
+    </div>
+  `;
+  rsvpStatus.className = 'status status--success';
+}
+form.reset();
 
-    // Success
-    if (rsvpStatus) {
-      rsvpStatus.textContent = `✓ Thank you, ${name}! Your RSVP has been received.`;
-      rsvpStatus.className = 'status status--success';
-    }
-    form.reset();
   });
 }
 function initScratchCard() {
@@ -1435,3 +1441,68 @@ const height = canvas.offsetHeight;
   ctx.textAlign = "center";
   ctx.fillText("Scratch Here", width / 2, height / 2);
 }
+
+/* ========================================
+   WEDDING COLOUR THEME SWITCHER
+======================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const themeToggle = document.getElementById("themeToggle");
+    const themePanel = document.getElementById("themePanel");
+    const themeOptions = document.querySelectorAll(".theme-option");
+
+    // Stop if the theme switcher HTML is missing
+    if (!themeToggle || !themePanel || !themeOptions.length) {
+        return;
+    }
+
+    const validThemes = ["royal", "blush", "sage", "burgundy"];
+
+    function applyTheme(theme) {
+        if (!validThemes.includes(theme)) {
+            theme = "royal";
+        }
+
+        document.documentElement.setAttribute("data-theme", theme);
+
+        themeOptions.forEach(function (option) {
+            const isActive = option.dataset.theme === theme;
+
+            option.classList.toggle("active", isActive);
+            option.setAttribute("aria-pressed", String(isActive));
+        });
+
+        try {
+            localStorage.setItem("weddingColourTheme", theme);
+        } catch (error) {
+            // The theme still works if browser storage is unavailable.
+        }
+    }
+
+    // Open or close the theme panel
+    themeToggle.addEventListener("click", function () {
+        const isHidden = themePanel.hidden;
+        themePanel.hidden = !isHidden;
+        themeToggle.setAttribute("aria-expanded", String(isHidden));
+    });
+
+    // Apply the selected theme
+    themeOptions.forEach(function (option) {
+        option.addEventListener("click", function () {
+            applyTheme(option.dataset.theme);
+            themePanel.hidden = true;
+            themeToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    // Restore the previously selected theme
+    let savedTheme = "royal";
+
+    try {
+        savedTheme = localStorage.getItem("weddingColourTheme") || "royal";
+    } catch (error) {
+        // Use Royal Gold as the default.
+    }
+
+    applyTheme(savedTheme);
+});
