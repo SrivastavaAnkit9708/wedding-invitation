@@ -467,3 +467,37 @@
     }
 
 }
+
+/* =========================================
+   OUR JOURNEY - MOBILE OVERLAP FIX
+========================================= */
+
+@media (max-width: 1024px) {
+
+    /* Decorative illustrations */
+    .journey-art {
+        width: 100px !important;
+        max-width: 100px !important;
+        z-index: 0 !important;
+        pointer-events: none;
+    }
+
+    /* Journey cards above decorative art */
+    .journey-card {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Corner floral decorations */
+    .journey-corner {
+        width: 100px !important;
+        z-index: 1 !important;
+    }
+
+    /* Keep section content above decorations */
+    .journey-section > *:not(.journey-art):not(.journey-corner) {
+        position: relative;
+        z-index: 2;
+    }
+
+}
