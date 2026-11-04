@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1600 650"
+     preserveAspectRatio="none">
+
+  <defs>
+
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8dc"/>
+      <stop offset="20%" stop-color="#f7d774"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="80%" stop-color="#f3df97"/>
+      <stop offset="100%" stop-color="#fff6d5"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- Outer Border -->
+  <rect
+      x="12"
+      y="12"
+      width="1576"
+      height="626"
+      rx="34"
+      fill="none"
+      stroke="url(#gold)"
+      stroke-width="4"/>
+
+  <!-- Inner Border -->
+  <rect
+      x="34"
+      y="34"
+      width="1532"
+      height="582"
+      rx="24"
+      fill="none"
+      stroke="url(#gold)"
+      stroke-opacity=".45"
+      stroke-width="2"/>
+
+  <!-- Top Ornament -->
+  <circle cx="800" cy="24" r="6" fill="url(#gold)"/>
+  <line x1="770" y1="24" x2="830" y2="24"
+        stroke="url(#gold)"
+        stroke-width="2"/>
+
+  <!-- Bottom Ornament -->
+  <circle cx="800" cy="626" r="6" fill="url(#gold)"/>
+  <line x1="770" y1="626" x2="830" y2="626"
+        stroke="url(#gold)"
+        stroke-width="2"/>
+
+  <!-- Corner Ornaments -->
+  <circle cx="70" cy="70" r="8" fill="url(#gold)"/>
+  <circle cx="1530" cy="70" r="8" fill="url(#gold)"/>
+  <circle cx="70" cy="580" r="8" fill="url(#gold)"/>
+  <circle cx="1530" cy="580" r="8" fill="url(#gold)"/>
+
+</svg>

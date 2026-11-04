@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 760 70"
+     width="760"
+     height="70"
+     fill="none">
+
+  <defs>
+    <!-- Smooth fade toward both outer ends -->
+    <linearGradient id="leftFade" x1="40" y1="0" x2="365" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C99A3A" stop-opacity="0"/>
+      <stop offset="0.18" stop-color="#C99A3A" stop-opacity=".18"/>
+      <stop offset="0.55" stop-color="#C99A3A" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#C99A3A" stop-opacity="1"/>
+    </linearGradient>
+
+    <linearGradient id="rightFade" x1="720" y1="0" x2="395" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C99A3A" stop-opacity="0"/>
+      <stop offset="0.18" stop-color="#C99A3A" stop-opacity=".18"/>
+      <stop offset="0.55" stop-color="#C99A3A" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#C99A3A" stop-opacity="1"/>
+    </linearGradient>
+
+    <linearGradient id="heartGold" x1="380" y1="17" x2="380" y2="55" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E6C45E"/>
+      <stop offset=".5" stop-color="#D3A63C"/>
+      <stop offset="1" stop-color="#B88424"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Elegant left line -->
+  <path d="M42 35 C135 35 245 35 356 35"
+        stroke="url(#leftFade)"
+        stroke-width="1.6"
+        stroke-linecap="round"/>
+
+  <!-- Elegant right line -->
+  <path d="M404 35 C515 35 625 35 718 35"
+        stroke="url(#rightFade)"
+        stroke-width="1.6"
+        stroke-linecap="round"/>
+
+  <!-- Small ornamental curls near the heart -->
+  <path d="M356 35
+           C363 35 366 31 369 27
+           C371 24 375 25 376 29
+           C377 32 375 34 372 35"
+        stroke="#C99A3A"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        opacity=".9"/>
+
+  <path d="M404 35
+           C397 35 394 31 391 27
+           C389 24 385 25 384 29
+           C383 32 385 34 388 35"
+        stroke="#C99A3A"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        opacity=".9"/>
+
+  <!-- Tiny center separator -->
+  <circle cx="380" cy="35" r="1.6" fill="#C99A3A" opacity=".9"/>
+
+  <!-- Refined small heart -->
+  <path d="M380 54
+           C376.5 50.5 367 44.3 367 37.7
+           C367 33.2 370.2 30.2 374.2 30.2
+           C377.1 30.2 379.1 31.8 380 34.1
+           C380.9 31.8 382.9 30.2 385.8 30.2
+           C389.8 30.2 393 33.2 393 37.7
+           C393 44.3 383.5 50.5 380 54Z"
+        fill="url(#heartGold)"
+        stroke="#B88424"
+        stroke-width=".8"
+        stroke-linejoin="round"/>
+
+</svg>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 500 625"
+    width="500"
+    height="625"
+    preserveAspectRatio="none">
+
+    <defs>
+
+        <linearGradient id="goldGradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%">
+
+            <stop offset="0%" stop-color="#F8E8B0"/>
+            <stop offset="45%" stop-color="#D4AF37"/>
+            <stop offset="100%" stop-color="#A87B21"/>
+
+        </linearGradient>
+
+    </defs>
+
+    <!-- Top Center Ornament -->
+<g fill="none" stroke="url(#goldGradient)" stroke-width="1.4" stroke-linecap="round">
+
+    <path d="M225 18 C238 8 262 8 275 18"/>
+    <path d="M235 18 C244 26 256 26 265 18"/>
+
+    <circle cx="250" cy="18" r="2.2" fill="url(#goldGradient)" stroke="none"/>
+
+</g>
+
+<!-- Bottom Center Ornament -->
+<g fill="none" stroke="url(#goldGradient)" stroke-width="1.4" stroke-linecap="round">
+
+    <path d="M225 607 C238 617 262 617 275 607"/>
+    <path d="M235 607 C244 599 256 599 265 607"/>
+
+    <circle cx="250" cy="607" r="2.2" fill="url(#goldGradient)" stroke="none"/>
+
+</g>
+
+<!-- Top Left Corner Ornament -->
+<g fill="none"
+   stroke="url(#goldGradient)"
+   stroke-width="1.2"
+   stroke-linecap="round"
+   stroke-linejoin="round">
+
+    <path d="M54 78
+         C54 48 66 36 96 36"/>
+
+<path d="M72 78
+         C72 58 82 54 96 54"/>
+
+<path d="M96 36
+         C108 28 122 28 134 36"/>
+
+<circle cx="96"
+        cy="36"
+        r="2.2"
+        fill="url(#goldGradient)"
+        stroke="none"/>
+
+</g>
+
+<!-- Outer Border -->
+<rect
+    x="12"
+    y="12"
+    width="476"
+    height="601"
+    rx="18"
+    ry="18"
+    fill="none"
+    stroke="url(#goldGradient)"
+    stroke-width="2"/>
+
+<!-- Inner Border -->
+<rect
+    x="24"
+    y="24"
+    width="452"
+    height="577"
+    rx="12"
+    ry="12"
+    fill="none"
+    stroke="url(#goldGradient)"
+    stroke-width="1"/>
+</svg>
